@@ -7,6 +7,47 @@ final forYouImages = [
   MovieModel(imageUrl: "assets/for_your_image_4.jpeg"),
 ];
 
+final genresList = [
+  MovieModel(title: "Horror", imageUrl: "assets/genres_1.png"),
+  MovieModel(title: "Fantasy", imageUrl: "assets/genres_2.jpeg"),
+  MovieModel(title: "History", imageUrl: "assets/genres_3.jpeg"),
+  MovieModel(title: "Detective", imageUrl: "assets/genres_4.jpeg"),
+  MovieModel(title: "Action", imageUrl: "assets/genres_5.jpeg"),
+];
+
+final legendaryImages = [
+  MovieModel(
+    imageUrl: "assets/legendary_movie_1.jpeg",
+    title: "Alien",
+    releaseYear: "1979",
+    rating: "8.5",
+  ),
+  MovieModel(
+    imageUrl: "assets/legendary_movie_2.jpeg",
+    title: "300",
+    releaseYear: "2006",
+    rating: "9.4",
+  ),
+  MovieModel(
+    imageUrl: "assets/popular_image_3.jpeg",
+    title: "Narcos",
+    releaseYear: "2020",
+    rating: "8.7",
+  ),
+  MovieModel(
+    imageUrl: "assets/for_your_image_2.jpeg",
+    title: "Shazam!",
+    releaseYear: "2021",
+    rating: "7.5",
+  ),
+  MovieModel(
+    imageUrl: "for_your_image_1.jpeg",
+    title: "Cruella",
+    releaseYear: "2021",
+    rating: "9.2",
+  ),
+];
+
 final popularImages = [
   MovieModel(
     imageUrl: "assets/popular_image_1.jpeg",
@@ -76,7 +117,7 @@ final popularImages = [
   ),
   MovieModel(
     imageUrl: "assets/popular_image_2.jpeg",
-    title: 'Shang-Chi and the Legend of the Ten Rings',
+    title: 'Shang-Chi',
     releaseYear: '2022',
     rating: '7.5',
   ),
@@ -98,45 +139,4 @@ final popularImages = [
     releaseYear: '2020',
     rating: '9.7',
   ),
-];
-
-final legendaryImages = [
-  MovieModel(
-    imageUrl: "assets/legendary_movie_1.jpeg",
-    title: "Alien",
-    releaseYear: "1979",
-    rating: "8.5",
-  ),
-  MovieModel(
-    imageUrl: "assets/legendary_movie_2.jpeg",
-    title: "300",
-    releaseYear: "2006",
-    rating: "9.4",
-  ),
-  MovieModel(
-    imageUrl: "assets/popular_image_3.jpeg",
-    title: "Narcos",
-    releaseYear: "2020",
-    rating: "8.7",
-  ),
-  MovieModel(
-    imageUrl: "assets/for_your_image_2.jpeg",
-    title: "Shazam!",
-    releaseYear: "2021",
-    rating: "7.5",
-  ),
-  MovieModel(
-    imageUrl: "for_your_image_1.jpeg",
-    title: "Cruella",
-    releaseYear: "2021",
-    rating: "9.2",
-  ),
-];
-
-final genresList = [
-  MovieModel(title: "Horror", imageUrl: "assets/genres_1.png"),
-  MovieModel(title: "Fantasy", imageUrl: "assets/genres_2.jpeg"),
-  MovieModel(title: "History", imageUrl: "assets/genres_3.jpeg"),
-  MovieModel(title: "Detective", imageUrl: "assets/genres_4.jpeg"),
-  MovieModel(title: "Action", imageUrl: "assets/genres_5.jpeg"),
 ];

@@ -14,6 +14,7 @@ class ForYouCardsLayout extends StatelessWidget {
         return SizedBox(
           height: MediaQuery.of(context).size.height * 0.4,
           child: PageView.builder(
+            physics: const ClampingScrollPhysics(),
             controller: viewModel.pageController,
             itemCount: viewModel.forYouMovies.length,
             itemBuilder: (context, index) {
