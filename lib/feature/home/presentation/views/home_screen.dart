@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nextflix/core/constants/app_colors.dart';
-import 'package:nextflix/core/constants/dummy_data.dart';
-import 'package:nextflix/feature/home/presentation/views/widgets/custom_card_normal.dart';
 import 'package:nextflix/feature/home/presentation/views/widgets/page_indicator.dart';
 import 'package:provider/provider.dart';
 
@@ -9,6 +7,7 @@ import '../view_model/home_view_model.dart';
 import 'widgets/custom_search_bar.dart';
 import 'widgets/for_you_layout.dart';
 import 'widgets/home_header.dart';
+import 'widgets/popular_list_view.dart';
 import 'widgets/section_title.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,23 +23,24 @@ class HomeScreen extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             child: Consumer<HomeViewModel>(
               builder: (context, viewModel, _) {
-                return Column(
+                return const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const HomeHeader(),
-                    const SizedBox(height: 20),
-                    const CustomSearchBar(),
-                    const SizedBox(height: 20),
-                    const Padding(
+                    HomeHeader(),
+                    SizedBox(height: 20),
+                    CustomSearchBar(),
+                    SizedBox(height: 20),
+                    Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: 30,
                         vertical: 5,
                       ),
                       child: SectionTitle(title: "For You"),
                     ),
-                    const ForYouCardsLayout(),
-                    const PageIndicator(),
-                    const Padding(
+                    ForYouCardsLayout(),
+                    PageIndicator(),
+                    // popular movies
+                    Padding(
                       padding: EdgeInsets.symmetric(
                         vertical: 20,
                         horizontal: 30,
@@ -61,19 +61,27 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 28,
-                        vertical: 10,
+                    PopularListView(),
+                    // genre movies
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 30,
                       ),
-                      height: MediaQuery.sizeOf(context).height * 0.27,
-                      child: ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        itemCount: popularImages.length,
-                        itemBuilder: (context, index) {
-                          return CustomCardNormal(movie: popularImages[index]);
-                        },
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SectionTitle(title: "Genres"),
+                              SectionTitle(
+                                title: "See All",
+                                color: AppColors.buttonColor,
+                                fontSize: 16,
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ],

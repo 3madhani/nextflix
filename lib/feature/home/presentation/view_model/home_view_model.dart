@@ -7,6 +7,9 @@ import '../../data/model/movie_model.dart';
 
 class HomeViewModel extends ChangeNotifier {
   final List<MovieModel> forYouMovies = List.of(forYouImages);
+  final List<MovieModel> popularMovies = List.of(popularImages);
+  final List<MovieModel> legendaryMovies = List.of(legendaryImages);
+  final List<MovieModel> genres = List.of(genresList);
   final PageController pageController = PageController(viewportFraction: 0.8);
   int currentPage = 0;
   late Timer _timer;
