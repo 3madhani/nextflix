@@ -7,20 +7,29 @@ class CustomCardThumbnail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(right: 15, top: 10, bottom: 30),
+    return InkResponse(
+      splashColor: AppColors.buttonColor.withOpacity(0.25),
+      onTap: () {
+        // Handle tap event here
+      },
+      child: Container(
+        margin: const EdgeInsets.only(right: 15, top: 10, bottom: 30),
 
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.buttonColor.withOpacity(0.25),
-            blurRadius: 5,
-            spreadRadius: 1,
-            offset: const Offset(0, 3),
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.buttonColor.withOpacity(0.25),
+              blurRadius: 5,
+              spreadRadius: 1,
+              offset: const Offset(0, 3),
+            ),
+          ],
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            image: AssetImage(imageUrl),
+            fit: BoxFit.cover,
           ),
-        ],
-        borderRadius: BorderRadius.circular(20),
-        image: DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.cover),
+        ),
       ),
     );
   }

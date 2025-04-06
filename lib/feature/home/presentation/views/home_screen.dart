@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nextflix/feature/home/presentation/views/widgets/page_indicator.dart';
 import 'package:provider/provider.dart';
 
 import '../view_model/home_view_model.dart';
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(height: 20),
                     ForYouSectionTitle(),
                     ForYouCardsLayout(),
-                    SizedBox(height: 20),
+                    PageIndicator(),
                   ],
                 );
               },
