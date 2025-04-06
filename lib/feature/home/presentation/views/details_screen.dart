@@ -184,7 +184,7 @@ class DetailsScreen extends StatelessWidget {
                             // the comments list
                             CommentsListView(comments: movie.comments!),
                             SizedBox(
-                              height: MediaQuery.sizeOf(context).height * .15,
+                              height: MediaQuery.sizeOf(context).height * .1,
                             ),
                           ],
                         ),
