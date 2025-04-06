@@ -4,8 +4,10 @@ import 'package:nextflix/feature/home/presentation/views/widgets/page_indicator.
 import 'package:provider/provider.dart';
 
 import '../view_model/home_view_model.dart';
+import 'widgets/bottom_nav_bar.dart';
 import 'widgets/custom_search_bar.dart';
 import 'widgets/for_you_layout.dart';
+import 'widgets/genres_list_view.dart';
 import 'widgets/home_header.dart';
 import 'widgets/popular_list_view.dart';
 import 'widgets/section_title.dart';
@@ -17,13 +19,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => HomeViewModel(),
-      child: Scaffold(
-        body: SafeArea(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Consumer<HomeViewModel>(
-              builder: (context, viewModel, _) {
-                return const Column(
+      child: const Scaffold(
+        body: Stack(
+          children: [
+            SafeArea(
+              child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     HomeHeader(),
@@ -84,11 +86,37 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
+                    GenresListView(),
+                    // legend movies
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 30,
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SectionTitle(title: "Legendary Movies"),
+                              SectionTitle(
+                                title: "See All",
+                                color: AppColors.buttonColor,
+                                fontSize: 16,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 10),
                   ],
-                );
-              },
+                ),
+              ),
             ),
-          ),
+            // nav bar
+            BottomNavBar(),
+          ],
         ),
       ),
     );
