@@ -26,8 +26,8 @@ class BottomNavBar extends StatelessWidget {
                     color: AppColors.searchBarColor.withOpacity(0.6),
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                      color: AppColors.buttonColor.withOpacity(0.4),
-                      width: 2,
+                      color: AppColors.buttonColor.withOpacity(0.2),
+                      width: 1,
                     ),
                   ),
                   height: 70,
