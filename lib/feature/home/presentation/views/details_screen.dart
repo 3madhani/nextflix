@@ -5,7 +5,9 @@ import 'package:nextflix/feature/home/data/model/movie_model.dart';
 import 'package:nextflix/feature/home/presentation/views/widgets/cast_and_crew.dart';
 import 'package:readmore/readmore.dart';
 
+import 'widgets/exit_button.dart';
 import 'widgets/tag_widget.dart';
+import 'widgets/trailer_thumbnail.dart';
 
 class DetailsScreen extends StatelessWidget {
   final MovieModel movie;
@@ -143,21 +145,43 @@ class DetailsScreen extends StatelessWidget {
                               ),
                             ),
                             // thumbnail over each other
-                            Stack(
-                              alignment: Alignment.center,
+                            const TrailerThumbnail(),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 30),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 10,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  height: 180,
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(18),
-                                    image: const DecorationImage(
-                                      image: AssetImage("assets/trailer.jpeg"),
-                                      fit: BoxFit.cover,
-                                    ),
+                                Text(
+                                  "Comments",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.white.withOpacity(0.8),
+                                  ),
+                                ),
+                                const Text(
+                                  "See all",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.buttonColor,
                                   ),
                                 ),
                               ],
+                            ),
+
+                            SizedBox(
+                              height: MediaQuery.sizeOf(context).height * .15,
                             ),
                           ],
                         ),
@@ -168,6 +192,7 @@ class DetailsScreen extends StatelessWidget {
               ],
             ),
           ),
+          ExitButton(),
         ],
       ),
     );
