@@ -25,16 +25,23 @@ class TrailerThumbnail extends StatelessWidget {
         ),
         Positioned(
           top: 90,
-          child: Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white.withOpacity(0.6),
-            ),
-            child: Icon(
-              FontAwesomeIcons.play,
-              color: AppColors.buttonColor.withOpacity(.8),
-              size: 25,
+          child: InkResponse(
+            radius: 100,
+            splashColor: AppColors.buttonColor.withOpacity(0.3),
+            onTap: () {
+              // Handle tap event here
+            },
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white.withOpacity(0.6),
+              ),
+              child: Icon(
+                FontAwesomeIcons.play,
+                color: AppColors.buttonColor.withOpacity(.8),
+                size: 25,
+              ),
             ),
           ),
         ),
