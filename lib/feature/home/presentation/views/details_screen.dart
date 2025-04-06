@@ -5,6 +5,7 @@ import 'package:nextflix/feature/home/data/model/movie_model.dart';
 import 'package:nextflix/feature/home/presentation/views/widgets/cast_and_crew.dart';
 import 'package:readmore/readmore.dart';
 
+import 'widgets/comments_list_view.dart';
 import 'widgets/exit_button.dart';
 import 'widgets/play_now_button.dart';
 import 'widgets/tag_widget.dart';
@@ -180,7 +181,8 @@ class DetailsScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-
+                            // the comments list
+                            CommentsListView(comments: movie.comments!),
                             SizedBox(
                               height: MediaQuery.sizeOf(context).height * .15,
                             ),

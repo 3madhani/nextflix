@@ -9,7 +9,7 @@ import 'widgets/custom_search_bar.dart';
 import 'widgets/for_you_layout.dart';
 import 'widgets/genres_list_view.dart';
 import 'widgets/home_header.dart';
-import 'widgets/popular_list_view.dart';
+import 'widgets/movie_list_view.dart';
 import 'widgets/section_title.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,30 +19,30 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => HomeViewModel(),
-      child: const Scaffold(
+      child: Scaffold(
         body: Stack(
           children: [
             SafeArea(
               child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    HomeHeader(),
-                    SizedBox(height: 20),
-                    CustomSearchBar(),
-                    SizedBox(height: 20),
-                    Padding(
+                    const HomeHeader(),
+                    const SizedBox(height: 20),
+                    const CustomSearchBar(),
+                    const SizedBox(height: 20),
+                    const Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: 30,
                         vertical: 5,
                       ),
                       child: SectionTitle(title: "For You"),
                     ),
-                    ForYouCardsLayout(),
-                    PageIndicator(),
+                    const ForYouCardsLayout(),
+                    const PageIndicator(),
                     // popular movies
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.symmetric(
                         vertical: 20,
                         horizontal: 30,
@@ -63,9 +63,14 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    PopularListView(),
+                    Consumer<HomeViewModel>(
+                      builder:
+                          (context, viewModel, _) => MovieListView(
+                            movieModels: viewModel.popularMovies,
+                          ),
+                    ),
                     // genre movies
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.symmetric(
                         vertical: 20,
                         horizontal: 30,
@@ -86,9 +91,9 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    GenresListView(),
+                    const GenresListView(),
                     // legend movies
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.symmetric(
                         vertical: 20,
                         horizontal: 30,
@@ -109,13 +114,19 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 10),
+                    Consumer<HomeViewModel>(
+                      builder:
+                          (context, viewModel, _) => MovieListView(
+                            movieModels: viewModel.legendaryMovies,
+                          ),
+                    ),
+                    const SizedBox(height: 100),
                   ],
                 ),
               ),
             ),
             // nav bar
-            BottomNavBar(),
+            const BottomNavBar(),
           ],
         ),
       ),

@@ -35,7 +35,10 @@ class CustomCardNormal extends StatelessWidget {
                 ),
               ),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
                 image: DecorationImage(
                   image: AssetImage(movie.imageUrl!),
                   fit: BoxFit.cover,
@@ -45,7 +48,7 @@ class CustomCardNormal extends StatelessWidget {
             Positioned(
               left: 15,
               right: 15,
-              bottom: -8,
+              bottom: -10,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
