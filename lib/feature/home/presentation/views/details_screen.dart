@@ -6,6 +6,7 @@ import 'package:nextflix/feature/home/presentation/views/widgets/cast_and_crew.d
 import 'package:readmore/readmore.dart';
 
 import 'widgets/exit_button.dart';
+import 'widgets/play_now_button.dart';
 import 'widgets/tag_widget.dart';
 import 'widgets/trailer_thumbnail.dart';
 
@@ -192,7 +193,11 @@ class DetailsScreen extends StatelessWidget {
               ],
             ),
           ),
-          ExitButton(),
+          // the exit button
+          const ExitButton(),
+
+          // the play button
+          const PlayNowButton(),
         ],
       ),
     );
