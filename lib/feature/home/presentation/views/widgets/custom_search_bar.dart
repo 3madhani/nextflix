@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nextflix/core/constants/app_colors.dart';
 
-import '../search_screen.dart';
+import '../../../../search/presentation/views/search_screen.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({super.key});
